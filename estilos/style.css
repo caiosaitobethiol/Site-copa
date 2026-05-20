@@ -30,6 +30,12 @@ header {
     gap: 1rem;
 }
 
+/*QUero Colocar uma imagem ao lado da logo no header e que nao fique grande*/
+header img {
+    height: 40px; /* Ajuste a altura conforme necessário */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
@@ -59,7 +65,7 @@ th { background-color: #111; color: #fff; font-weight: bold; }
 tr:nth-child(even) { background-color: #0a0a0a; }
 
 /* Multimédia e Imagens */
-img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #333; }
+img { max-width: 100%; height: auto; border-radius: 25px; margin-bottom: 1rem; border: 1px solid #333; }
 .video-container {
     position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 8px;
 }
