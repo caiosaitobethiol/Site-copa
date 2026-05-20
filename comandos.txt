@@ -1,0 +1,23 @@
+Como puxar o repositorio pra uma pasta vazia
+
+git init 
+
+
+git config --global user.name ""
+git config --global user.email ""
+
+git remote add origin linkdosite
+
+git pull origin main
+
+=========================================================================================================
+
+Como upar o repositorio atualizado no github 
+
+git add .
+
+git commmit -m "mensagem descritiva do que vc esta upando"
+
+git branch -M main
+
+git push -u origin main
