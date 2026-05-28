@@ -9,7 +9,8 @@ git config --global user.name "caiosaitobethiol"
 git config --global user.email ""
 git config --global user.email "caiobethiol@gmail.com"
 
-git remote add origin https://github.com/caiosaitobethiol/Site-copa.git
+git remote add origin linkdosite
+git remote add origin linkdosite https://github.com/caiosaitobethiol/Site-copa.git
 
 git pull origin main
 
@@ -19,7 +20,7 @@ Como upar o repositorio atualizado no github
 
 git add .
 
-git commmit -m "mensagem descritiva do que vc esta upando"
+git commit -m "mensagem descritiva do que vc esta upando"
 
 git branch -M main
 
