@@ -4,7 +4,10 @@ git init
 
 
 git config --global user.name ""
+git config --global user.name "caiosaitobethiol"
+
 git config --global user.email ""
+git config --global user.email "caiobethiol@gmail.com"
 
 git remote add origin linkdosite
 
