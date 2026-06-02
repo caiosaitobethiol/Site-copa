@@ -280,24 +280,23 @@ footer {
     display: flex; /* ou inline-flex, escolha apenas um */
     flex-direction: row;
     gap: 15px; /* Adiciona um espaço entre as imagens, se houver mais de uma */
-    max-width: 100%;
-    margin-bottom: 1rem;
+    max-width: 1136px;
+    width: 100%;
+    margin-bottom: 0 auto;
+    padding: 0;
 }
 
 /* Agora, a regra para diminuir as IMAGENS dentro do contentor */
 .containerimagem img {
-    width: 300px; /* Altere este valor para o tamanho que desejar (ex: 150px, 50%, etc.) */
+    width: calc(33.333% - 10px); /* Altere este valor para o tamanho que desejar (ex: 150px, 50%, etc.) */
     height: auto; /* Mantém a proporção da imagem para não ficar esticada */
     border-radius: 25px; /* Movi o arredondamento para a imagem */
     border: 1px solid #333; /* Movi a borda para a imagem */
 }
 
-.minha-section img, .containerimagem img {
-    display: block;          /* Mantém como bloco independente */
-    max-width: 750px;        /* Mantém o tamanho que definiu */
-    width: 100%;             
-    height: auto;            
-    
-    /* A MÁGICA ACONTECE AQUI: */
-    margin: 2rem auto 0 auto; 
+@media (max-width: 768px){
+    .containerimagem img{
+        width: 30%;
+        max-width: 500px;
+    }
 }
