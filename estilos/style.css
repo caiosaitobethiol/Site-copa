@@ -300,3 +300,102 @@ footer {
         max-width: 500px;
     }
 }
+
+/* =========================================
+   Cards de Notícias (CSS Grid)
+========================================= */
+.noticias {
+    margin-top: 3rem;
+}
+
+.noticias-grid {
+    display: grid;
+    /* A mágica acontece aqui: divide em 3 colunas de tamanhos iguais (1fr) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espaço entre os cards */
+}
+
+/* O "Corpo" de cada cartão */
+.noticia-card {
+    background-color: #111111; /* Fundo um pouco mais claro que o fundo preto do site */
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden; /* Impede que a foto "vaze" pelas bordas arredondadas do card */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo da Imagem dentro do cartão */
+.noticia-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Corta a imagem perfeitamente sem deixá-la esticada ou amassada */
+    border-radius: 0; /* Anula o arredondamento global do seu CSS para a imagem encostar nas bordas */
+    margin-bottom: 0;
+    border: none;
+}
+
+/* A área de texto dentro do cartão */
+.noticia-conteudo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Preenche o espaço vazio se um título for maior que o outro */
+}
+
+.noticia-conteudo h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.noticia-conteudo p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Empurra o botão de link sempre para o final da caixa */
+}
+
+/* Botão "Leia mais" */
+.btn-leiamais {
+    background-color: #ffcc00; /* Amarelo temático */
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.btn-leiamais:hover {
+    background-color: #e6b800; /* Amarelo mais escuro ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .containerimagem img{
+        width: 30%;
+        max-width: 500px;
+    }
+
+    /* ADICIONE ESTA PARTE PARA AS NOTÍCIAS NO CELULAR */
+    .noticias-grid {
+        grid-template-columns: 1fr; /* Muda de 3 colunas para apenas 1 coluna no celular */
+    }
+}
