@@ -18,7 +18,7 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-    outline: 3px solid #ffcc00;
+    outline: 3px solid grey;
     /* Contraste alto para navegação por teclado */
     outline-offset: 2px;
 }
@@ -35,14 +35,29 @@ header {
     gap: 1rem;
 }
 
+@font-face {
+  /* O nome que você vai usar para chamar a fonte depois */
+  font-family: 'Fonte Copa'; 
+  
+  /* O caminho para o arquivo da fonte (relativo ao arquivo CSS) */
+  src: url('../font/fifa-26.otf') format('opentype');
+  
+  /* Opcional: defina o peso e o estilo padrão */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Alinhamento da Logo e Texto */
 .logo {
+    font-family: 'Fonte Copa', Arial, sans-serif;
     font-size: 1.5rem;
-    font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 12px;
-    /* Espaço entre a imagem e o texto */
+    gap: 12px; /* Espaço entre a imagem e o texto */
+    
+    /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
+    text-decoration: none; /* Remove o sublinhado padrão de link */
+    color: #ffffff;        /* Garante que o texto continue branco */
 }
 
 /* Controle de tamanho e remoção das bordas globais para a logo */
@@ -96,7 +111,7 @@ p {
 }
 
 a.text-link {
-    color: #ffcc00;
+    color: #5e9fca;
     text-decoration: none;
     font-weight: bold;
 }
@@ -358,7 +373,7 @@ footer {
 
 /* Botão "Leia mais" */
 .btn-leiamais {
-    background-color: #ffcc00; /* Amarelo temático */
+    background-color: #ffffff; /* Amarelo temático */
     color: #000000;
     text-decoration: none;
     text-align: center;
@@ -371,7 +386,7 @@ footer {
 }
 
 .btn-leiamais:hover {
-    background-color: #e6b800; /* Amarelo mais escuro ao passar o mouse */
+    background-color: #a7a7a7; /* Amarelo mais escuro ao passar o mouse */
 }
 
 /* Responsividade */
