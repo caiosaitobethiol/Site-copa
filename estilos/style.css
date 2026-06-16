@@ -1,31 +1,36 @@
-/* Reset básico e tipografia */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Fonte Copa';
+    src: url('../font/fifa-26.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     line-height: 1.6;
 }
 
-/* Acessibilidade de Teclado (Foco) */
 a:focus,
 button:focus,
 input:focus,
 textarea:focus,
 select:focus {
     outline: 3px solid grey;
-    /* Contraste alto para navegação por teclado */
     outline-offset: 2px;
 }
 
-/* Cabeçalho e Navegação */
+/* ====== Header ====== */
+
 header {
-    background-color: #000000;
+    background-color: #000;
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -35,42 +40,22 @@ header {
     gap: 1rem;
 }
 
-@font-face {
-  /* O nome que você vai usar para chamar a fonte depois */
-  font-family: 'Fonte Copa'; 
-  
-  /* O caminho para o arquivo da fonte (relativo ao arquivo CSS) */
-  src: url('../font/fifa-26.otf') format('opentype');
-  
-  /* Opcional: defina o peso e o estilo padrão */
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Alinhamento da Logo e Texto */
 .logo {
     font-family: 'Fonte Copa', Arial, sans-serif;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 12px; /* Espaço entre a imagem e o texto */
-    
-    /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
-    text-decoration: none; /* Remove o sublinhado padrão de link */
-    color: #ffffff;        /* Garante que o texto continue branco */
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
 }
 
-/* Controle de tamanho e remoção das bordas globais para a logo */
 .logo img {
     height: 40px;
-    /* Ajuste a altura conforme necessário */
     width: auto;
     margin-bottom: 0;
-    /* Anula a margem da regra global de imagens */
     border: none;
-    /* Anula a borda da regra global */
     border-radius: 0;
-    /* Anula o arredondamento da regra global */
 }
 
 nav {
@@ -80,7 +65,7 @@ nav {
 }
 
 nav a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -88,10 +73,17 @@ nav a {
 }
 
 nav a:hover {
-    color: #aaaaaa;
+    color: #aaa;
 }
 
-/* Container Principal */
+nav a.active {
+    color: #aaa;
+    border-bottom: 2px solid #aaa;
+    padding-bottom: 4px;
+}
+
+/* ====== Layout ====== */
+
 .container {
     max-width: 1200px;
     margin: 3rem auto;
@@ -107,8 +99,10 @@ h3 {
 
 p {
     margin-bottom: 1rem;
-    color: #cccccc;
+    color: #ccc;
 }
+
+/* ====== Links ====== */
 
 a.text-link {
     color: #5e9fca;
@@ -120,7 +114,8 @@ a.text-link:hover {
     text-decoration: underline;
 }
 
-/* Tabela */
+/* ====== Tabelas ====== */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -144,7 +139,8 @@ tr:nth-child(even) {
     background-color: #0a0a0a;
 }
 
-/* Multimédia e Imagens (Globais) */
+/* ====== Imagens ====== */
+
 img {
     max-width: 100%;
     height: auto;
@@ -152,6 +148,24 @@ img {
     margin-bottom: 1rem;
     border: 1px solid #333;
 }
+
+.containerimagem {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    max-width: 1136px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.containerimagem img {
+    width: calc(33.333% - 10px);
+    border-radius: 25px;
+    border: 1px solid #333;
+}
+
+/* ====== Vídeos ====== */
 
 .video-container {
     position: relative;
@@ -164,13 +178,13 @@ img {
 
 .video-container iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
 }
 
-/* Listas e Bookmarks */
+/* ====== Navegação interna ====== */
+
 .bookmark-nav {
     margin-bottom: 2rem;
     background: #111;
@@ -191,6 +205,8 @@ img {
     border-top: 1px dashed #333;
 }
 
+/* ====== Listas ====== */
+
 ul.standard-list {
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -201,7 +217,8 @@ ul.standard-list li {
     margin-bottom: 0.5rem;
 }
 
-/* Formulário */
+/* ====== Formulários ====== */
+
 form {
     display: flex;
     flex-direction: column;
@@ -265,116 +282,59 @@ button {
     background-color: #555;
 }
 
-/* Rodapé */
-footer {
-    border-top: 1px solid #333;
-    padding: 2rem;
-    text-align: center;
-    color: #666;
-    margin-top: 4rem;
-}
+/* ====== Notícias ====== */
 
-/* Responsividade */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
-    .btn-group {
-        flex-direction: column;
-    }
-}
-
-/* Primeiro, limpe um pouco o seu contentor (removi o display: flex repetido) */
-.containerimagem {
-    display: flex; /* ou inline-flex, escolha apenas um */
-    flex-direction: row;
-    gap: 15px; /* Adiciona um espaço entre as imagens, se houver mais de uma */
-    max-width: 1136px;
-    width: 100%;
-    margin-bottom: 0 auto;
-    padding: 0;
-}
-
-/* Agora, a regra para diminuir as IMAGENS dentro do contentor */
-.containerimagem img {
-    width: calc(33.333% - 10px); /* Altere este valor para o tamanho que desejar (ex: 150px, 50%, etc.) */
-    height: auto; /* Mantém a proporção da imagem para não ficar esticada */
-    border-radius: 25px; /* Movi o arredondamento para a imagem */
-    border: 1px solid #333; /* Movi a borda para a imagem */
-}
-
-@media (max-width: 768px){
-    .containerimagem img{
-        width: 30%;
-        max-width: 500px;
-    }
-}
-
-/* =========================================
-   Cards de Notícias (CSS Grid)
-========================================= */
 .noticias {
     margin-top: 3rem;
 }
 
 .noticias-grid {
     display: grid;
-    /* A mágica acontece aqui: divide em 3 colunas de tamanhos iguais (1fr) */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /* Espaço entre os cards */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-/* O "Corpo" de cada cartão */
 .noticia-card {
-    background-color: #111111; /* Fundo um pouco mais claro que o fundo preto do site */
+    background-color: #111;
     border: 1px solid #333;
     border-radius: 12px;
-    overflow: hidden; /* Impede que a foto "vaze" pelas bordas arredondadas do card */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* Estilo da Imagem dentro do cartão */
 .noticia-card img {
     width: 100%;
     height: 180px;
-    object-fit: cover; /* Corta a imagem perfeitamente sem deixá-la esticada ou amassada */
-    border-radius: 0; /* Anula o arredondamento global do seu CSS para a imagem encostar nas bordas */
+    object-fit: cover;
+    border-radius: 0;
     margin-bottom: 0;
     border: none;
 }
 
-/* A área de texto dentro do cartão */
 .noticia-conteudo {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Preenche o espaço vazio se um título for maior que o outro */
+    flex-grow: 1;
 }
 
 .noticia-conteudo h3 {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #fff;
     margin-bottom: 0.5rem;
 }
 
 .noticia-conteudo p {
     font-size: 0.9rem;
-    color: #cccccc;
+    color: #ccc;
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Empurra o botão de link sempre para o final da caixa */
+    flex-grow: 1;
 }
 
-/* Botão "Leia mais" */
 .btn-leiamais {
-    background-color: #ffffff; /* Amarelo temático */
-    color: #000000;
+    background-color: #fff;
+    color: #000;
     text-decoration: none;
     text-align: center;
     padding: 0.6rem;
@@ -386,10 +346,21 @@ footer {
 }
 
 .btn-leiamais:hover {
-    background-color: #a7a7a7; /* Amarelo mais escuro ao passar o mouse */
+    background-color: #a7a7a7;
 }
 
-/* Responsividade */
+/* ====== Footer ====== */
+
+footer {
+    border-top: 1px solid #333;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    margin-top: 4rem;
+}
+
+/* ====== Responsivo ====== */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -404,13 +375,12 @@ footer {
         flex-direction: column;
     }
 
-    .containerimagem img{
+    .containerimagem img {
         width: 30%;
         max-width: 500px;
     }
 
-    /* ADICIONE ESTA PARTE PARA AS NOTÍCIAS NO CELULAR */
     .noticias-grid {
-        grid-template-columns: 1fr; /* Muda de 3 colunas para apenas 1 coluna no celular */
+        grid-template-columns: 1fr;
     }
 }
